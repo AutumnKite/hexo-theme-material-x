@@ -41,7 +41,7 @@ music:
 avatar_placeholder: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
 
 # 日期格式 http://momentjs.com/docs/
-date_format: 'YYYY-MM-DD' # 文章发布日期的格式
+date_format: 'YYYY-MM-DD HH:mm:ss' # 文章发布日期的格式
 updated_date_format: 'll' # 文章更新日期的格式
 
 # 文章字数统计、阅读时长，默认关闭，开启需要安装插件: npm i --save hexo-wordcount
@@ -61,68 +61,84 @@ backstretch:
 # page的封面
 cover:
   scheme: search    # 后期将会提供多种封面方案
-  height: half      # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
-  title: Demo
+  height: full      # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
+  title: "AutumnKite's Blog"
   # logo: assets/logo.png    # logo和title只显示一个，若同时设置，则只显示logo
   # search_placeholder: '搜索'
   # 主页封面菜单
   features:
-    - name: 博文
-      icon: fas fa-rss
+    - name: 首页
+      icon: fas fa-home
       url: /
-    - name: 项目
-      icon: fas fa-code-branch
-      url: projects/
+    - name: 分类
+      icon: fas fa-folder-open
+      url: categories/
+      rel: nofollow
+    - name: 标签
+      icon: fas fa-hashtag
+      url: tags/
+      rel: nofollow
+    - name: 时间轴
+      icon: fas fa-archive
+      url: archives/
+      rel: nofollow
     - name: 友链
       icon: fas fa-link
       url: friends/
       rel: nofollow
     - name: 关于
-      icon: fas fa-info-circle
+      icon: fas fa-user
       url: about/
       rel: nofollow
 
 
 # 桌面端导航栏菜单
 menu_desktop:
-  - name: 示例
-    icon: fas fa-grin
+  - name: 首页
+    icon: fas fa-home
     url: /
   - name: 分类
     icon: fas fa-folder-open
-    url: blog/categories/
+    url: categories/
     rel: nofollow
   - name: 标签
     icon: fas fa-hashtag
-    url: blog/tags/
+    url: tags/
     rel: nofollow
-  - name: 归档
+  - name: 时间轴
     icon: fas fa-archive
-    url: blog/archives/
+    url: archives/
     rel: nofollow
+  - name: 友链
+    icon: fas fa-link
+    url: friends/
+  - name: 关于
+    icon: fas fa-user
+    url: about/
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
-  - name: 近期文章
-    icon: fas fa-clock
+  - name: 首页
+    icon: fas fa-home
     url: /
-  - name: 文章归档
-    icon: fas fa-archive
-    url: blog/archives/
+  - name: 分类
+    icon: fas fa-folder-open
+    url: categories/
     rel: nofollow
-  - name: 开源项目
-    icon: fas fa-code-branch
-    url: projects/
-  - name: 我的友链
+  - name: 标签
+    icon: fas fa-hashtag
+    url: tags/
+    rel: nofollow
+  - name: 时间轴
+    icon: fas fa-archive
+    url: archives/
+    rel: nofollow
+  - name: 友链
     icon: fas fa-link
     url: friends/
     rel: nofollow
-  - name: 主题文档
-    icon: fas fa-book
-    url: https://xaoxuu.com/wiki/material-x/
-    rel: nofollow
-  - name: 关于小站
-    icon: fas fa-info-circle
+  - name: 关于
+    icon: fas fa-user
     url: about/
     rel: nofollow
 
@@ -150,13 +166,12 @@ layout:
 # 侧边栏小部件配置
 sidebar:
   - widget: author
-    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
-    jinrishici: true
+    avatar: https://autumnkite.github.io/files/logo.png
     social: true
-  - widget: plain
-    icon: fas fa-file
-    title: 文本部件
-    body: '这是一段支持markdown的文本<br>![](https://img.vim-cn.com/4e/3c87a2fd28fd0b9c2f27ce3f83f1e9275d0488.png)'
+  # - widget: plain
+  #   icon: fas fa-file
+  #   title: 文本部件
+  #   body: '这是一段支持markdown的文本<br>![](https://img.vim-cn.com/4e/3c87a2fd28fd0b9c2f27ce3f83f1e9275d0488.png)'
   - widget: toc
   - widget: grid
     icon: fas fa-map-signs
@@ -167,73 +182,49 @@ sidebar:
         url: /
       - name: 文章归档
         icon: fas fa-archive
-        url: blog/archives/
+        url: archives/
         rel: nofollow
-      - name: 开源项目
-        icon: fas fa-code-branch
-        url: projects/
       - name: 我的友链
         icon: fas fa-link
         url: friends/
         rel: nofollow
-      - name: 主题文档
-        icon: fas fa-book
-        url: https://xaoxuu.com/wiki/material-x/
-        rel: nofollow
       - name: 关于小站
-        icon: fas fa-info-circle
+        icon: fas fa-user
         url: about/
         rel: nofollow
   - widget: category
     more:
       icon: fas fa-expand-arrows-alt
-      url: blog/categories/
+      url: categories/
       rel: nofollow
   - widget: tagcloud
-    icon: fas fa-tags
+    icon: fas fa-fire
     more:
       icon: fas fa-expand-arrows-alt
-      url: blog/tags/
+      url: tags/
       rel: nofollow
   # - widget: related_posts # 需要安装插件  npm i -S hexo-related-popular-posts
-  - widget: music
-    icon: fas fa-compact-disc
-    title: "最近在听"
-    more:
-      icon: far fa-heart
-      url: https://music.163.com/#/user/home?id=63035382
-      rel: external nofollow noopener noreferrer
-      target: _blank
-    server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
-    type: playlist    # song （单曲） album （专辑） playlist （歌单） search （搜索）
-    id: 2615636388     # 歌曲/专辑/歌单 ID
-  - widget: list
-    icon: fas fa-thumbs-up
-    title: 强烈推荐
-    rows:
-      - name: Hexo脚本（Mac）
-        url: https://xaoxuu.com/wiki/hexo.sh/
-      - name: 图床脚本（Mac）
-        url: https://xaoxuu.com/wiki/vim-cn.sh/
-      - name: 图片在线压缩
-        url: https://yasuotu.com
-      - name: 生成Favicon
-        url: https://realfavicongenerator.net
-      - name: 简历主题
-        url: https://mxclub.github.io/resume/
-
+  # - widget: music
+  #   icon: fas fa-compact-disc
+  #   title: "最近在听"
+  #   more:
+  #     icon: far fa-heart
+  #     url: https://music.163.com/#/user/home?id=63035382
+  #     rel: external nofollow noopener noreferrer
+  #     target: _blank
+  #   server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
+  #   type: playlist    # song （单曲） album （专辑） playlist （歌单） search （搜索）
+  #   id: 2615636388     # 歌曲/专辑/歌单 ID
 
 
 # 社交信息
 social:
-  - icon: fas fa-rss
-    url: atom.xml
   - icon: fas fa-envelope
-    url: mailto:me@xaoxuu.com
+    url: mailto:1790397194@qq.com
   - icon: fab fa-github
-    url: https://github.com/xaoxuu
-  - icon: fas fa-headphones-alt
-    url: https://music.163.com/#/user/home?id=63035382
+    url: https://github.com/AutumnKite
+  - icon: fas fa-code
+    url: https://www.codeforces.com/profile/AutumnKite
 
 
 # 分享按钮
@@ -256,7 +247,7 @@ share:
   #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png
 
 
-footer_post: '<center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>'
+footer_post: '<center>深深明白自己的弱小</center>'
 # footer: '网页页脚文字，支持[markdown](/)'
 
 
@@ -284,11 +275,11 @@ valine:
   #   app_id: 你的appId
   #   app_key: 你的appKey
   guest_info: nick,mail,link #valine comment header info
-  placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+  placeholder: 快来评论吧~ 如需要头像服务请在“邮箱”填写 Gravatar 中绑定的邮箱 # valine comment input placeholder(like: Please leave your footprints )
   avatar: mp # gravatar style https://valine.js.org/avatar
-  pageSize: 10 # comment list page size
+  pageSize: 20 # comment list page size
   verify: true # valine verify code (true/false)
-  notify: true # valine mail notify (true/false)
+  notify: false # valine mail notify (true/false)
   lang: zh-cn
   highlight: true
 

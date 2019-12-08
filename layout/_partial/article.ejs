@@ -97,9 +97,8 @@
 %>
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-<% if (page.mathjax){ %>
-  <%- partial('mathjax') %>
-<% } %>
+<!-- 已修改为直接加载 -->
+<%- partial('mathjax') %>
 
 <% if (page.layout == 'post'){ %>
   <script>
