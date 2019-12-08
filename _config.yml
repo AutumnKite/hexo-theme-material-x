@@ -45,7 +45,7 @@ date_format: 'YYYY-MM-DD HH:mm:ss' # 文章发布日期的格式
 updated_date_format: 'll' # 文章更新日期的格式
 
 # 文章字数统计、阅读时长，默认关闭，开启需要安装插件: npm i --save hexo-wordcount
-word_count: false
+word_count: true
 
 # 幻灯片
 backstretch:
@@ -223,8 +223,11 @@ social:
     url: mailto:1790397194@qq.com
   - icon: fab fa-github
     url: https://github.com/AutumnKite
-  - icon: fas fa-code
+  - icon: fas fa-globe
     url: https://www.codeforces.com/profile/AutumnKite
+  - icon: fab fa-qq
+    url: https://wpa.qq.com/msgrd?v=3&uin=1790397194&site=qq&menu=yes
+
 
 
 # 分享按钮
