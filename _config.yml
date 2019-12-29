@@ -38,7 +38,7 @@ music:
   autoplay: false   # 自动播放
 
 # 友链页头像占位图
-avatar_placeholder: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+avatar_placeholder: https://autumnkite.github.io/files/mp.jpg
 
 # 日期格式 http://momentjs.com/docs/
 date_format: 'YYYY-MM-DD HH:mm:ss' # 文章发布日期的格式
